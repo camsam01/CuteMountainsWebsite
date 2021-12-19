@@ -68,7 +68,7 @@ function App() {
         gasLimit: "285000",
         to: "0xeec4198B5b7c11378154777ef27a5DD1Dd2FE98a",
         from: blockchain.account,
-        value: blockchain.web3.utils.toWei((2 * _amount).toString(), "ether"),
+        value: blockchain.web3.utils.toWei((0.5 * _amount).toString(), "ether"),
       })
       .once("error", (err) => {
         console.log(err);
@@ -149,7 +149,7 @@ function App() {
 
             <s.SpacerLarge />
                 <s.TextTitle style={{ textAlign: "center" }}>
-                  MINT PRICE: 2 AVAX
+                  MINT PRICE: 0.5 AVAX
                 </s.TextTitle>
                 <s.SpacerXSmall />
                 <s.TextDescription style={{ textAlign: "center" }}>
