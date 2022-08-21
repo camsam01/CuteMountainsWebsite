@@ -72,10 +72,10 @@ export const connect = () => {
           });
           // Add listeners end
           }else {
-            dispatch(connectFailed("Change your network to the Avalanche C-Chain."));
+            dispatch(connectFailed("Change your network to the Avalanche C-Chain. Incorrect chainID detected."));
           }
        } else {
-          dispatch(connectFailed("Change your network to the Avalanche C-Chain."));
+          dispatch(connectFailed("Change your network to the Avalanche C-Chain. Incorrect networkID detected."));
         }
       } catch (err) {
         dispatch(connectFailed("Something went wrong."));
