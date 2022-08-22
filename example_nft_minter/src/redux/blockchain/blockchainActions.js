@@ -49,7 +49,7 @@ export const connect = () => {
           method: "eth_chainId",
         });
         //const NetworkData = await SmartContract.networks[networkId];
-        if (networkId == 1) {  // networkId was originally NetworkData   remember that 43114 is avax c chain id, and 137 is polygon 43113 is fuji testnet
+        if (networkId == 43114) {  // networkId was originally NetworkData   remember that 43114 is avax c chain id, and 137 is polygon 43113 is fuji testnet  chain: 43114, network:1
           if (chainID == 43114) {
           const SmartContractObj = new web3.eth.Contract(
             SmartContract,
@@ -75,13 +75,13 @@ export const connect = () => {
             dispatch(connectFailed("Change your network to the Avalanche C-Chain. Incorrect chainID detected."));
           }
        } else {
-          dispatch(connectFailed("Change your network to the Avalanche C-Chain. Incorrect networkID detected."));
+          dispatch(connectFailed("Change your network to the Avalanche C-Chain. Incorrect networkID detected. Your NetworkID is " + networkID));
         }
       } catch (err) {
-        dispatch(connectFailed("Something went wrong."));
+        dispatch(connectFailed("Something went wrong when reuqesting networkID, chainID or MetaMask address."));
       }
     } else {
-      dispatch(connectFailed("Install Metamask."));
+      dispatch(connectFailed("You need to have MetaMask to interact with this website and buy a CuteMountain NFT. :)"));
     }
   };
 };
