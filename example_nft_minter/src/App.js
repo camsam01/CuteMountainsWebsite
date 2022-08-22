@@ -73,7 +73,7 @@ function App() {
         gasLimit: "285000",
         to: "0xeec4198B5b7c11378154777ef27a5DD1Dd2FE98a",
         from: blockchain.account,
-        value: blockchain.web3.utils.toWei((0.5 * _amount).toString(), "ether"),
+        value: blockchain.web3.utils.toWei((0.25 * _amount).toString(), "ether"),
       })
       .once("error", (err) => {
         console.log(err);
@@ -149,11 +149,11 @@ function App() {
               <>
             <s.SpacerLarge />
                 <s.TextTitle style={{ textAlign: "center" }}>
-                  MINT PRICE: 0.5 AVAX
+                  Early Bird Price: 0.25 AVAX
                 </s.TextTitle>
                 <s.SpacerXSmall />
                 <s.TextDescription style={{ textAlign: "center" }}>
-                  Excluding gas fee.
+                  Early bird ending soon! Gas fee not inclusive.
                 </s.TextDescription>
                 <s.SpacerSmall />
                 <s.TextDescription style={{ textAlign: "center" }}>
@@ -212,6 +212,16 @@ function App() {
                       }}
                     >
                       {claimingNft ? "BUSY" : "BUY 5"}
+                    </StyledButton>                    
+                    <StyledButton
+                      disabled={claimingNft ? 1 : 0}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        claimNFTs(10);
+                        getData();
+                      }}
+                    >
+                      {claimingNft ? "BUSY" : "BUY 10"}
                     </StyledButton>
                   </s.Container>
 
