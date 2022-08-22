@@ -75,7 +75,7 @@ export const connect = () => {
             dispatch(connectFailed("Change your network to the Avalanche C-Chain. Incorrect chainID detected."));
           }
        } else {
-          dispatch(connectFailed("Change your network to the Avalanche C-Chain. Incorrect networkID detected. Your NetworkID is " + networkID));
+          dispatch(connectFailed("Change your network to the Avalanche C-Chain. Incorrect networkID detected. Your NetworkID is " + networkId));
         }
       } catch (err) {
         dispatch(connectFailed("Something went wrong when reuqesting networkID, chainID or MetaMask address."));
